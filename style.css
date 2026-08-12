@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, #102a4d 0%, #050b16 45%);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.page {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 28px 18px 40px;
+}
+
+.logo {
+  width: 82px;
+  height: 82px;
+  margin: 5px auto 18px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #00d4ff, #0066ff);
+
+  box-shadow:
+    0 0 25px rgba(0,180,255,0.45),
+    inset 0 1px 8px rgba(255,255,255,0.3);
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.brand {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aebbd0;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}.hero-box {
+  background: linear-gradient(
+    145deg,
+    rgba(17,32,58,0.98),
+    rgba(7,15,29,0.98)
+  );
+
+  border: 1px solid rgba(0,200,255,0.28);
+  border-radius: 22px;
+  padding: 28px 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.hero-title {
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.hero-text {
+  color: #b9c5d6;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+
+/* PREMIUM TELEGRAM BUTTON */
+
+.telegram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 70px;
+
+  padding: 18px 20px;
+  margin: 24px auto;
+
+  background: linear-gradient(
+    135deg,
+    #00d4ff 0%,
+    #008cff 50%,
+    #0055ff 100%
+  );
+
+  color: #ffffff !important;
+
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+
+  text-decoration: none !important;
+  text-align: center;
+
+  border: 2px solid rgba(255,255,255,0.65);
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px rgba(0,140,255,0.60),
+    0 0 35px rgba(0,200,255,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  animation: premiumPulse 1.8s infinite;
+}
+
+.telegram-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 15px 40px rgba(0,150,255,0.75),
+    0 0 45px rgba(0,210,255,0.40);
+}
+
+.telegram-btn:active {
+  transform: scale(0.96);
+}
+
+@keyframes premiumPulse {
+  0%, 100% {
+    box-shadow:
+      0 8px 25px rgba(0,140,255,0.60),
+      0 0 35px rgba(0,200,255,0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 38px rgba(0,180,255,0.85),
+      0 0 50px rgba(0,210,255,0.45);
+  }
+}
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.feature {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 7px;
+}
+
+.feature-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feature-text {
+  color: #8e9caf;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.disclaimer {
+  text-align: center;
+  color: #68758a;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+
+  .page {
+    padding: 22px 15px 35px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+
+  .hero-title {
+    font-size: 23px;
+  }
+
+  .telegram-btn {
+    min-height: 66px;
+    font-size: 19px;
+    border-radius: 16px;
+  }
+
+  .features {
+    gap: 10px;
+  }
+}
