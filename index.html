@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Trade With Goyal</title>
 
@@ -11,7 +14,9 @@
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
 n.queue=[];
 t=b.createElement(e);
 t.async=!0;
@@ -26,11 +31,13 @@ fbq('track','PageView');
 </script>
 
 <noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1596935485152290&ev=PageView&noscript=1"/>
+<img height="1" width="1"
+style="display:none"
+src="https://www.facebook.com/tr?id=1596935485152290&ev=PageView&noscript=1">
 </noscript>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -38,72 +45,67 @@ box-sizing:border-box;
 }
 
 body{
+margin:0;
+background:#070a0f;
+color:#fff;
 font-family:Arial,sans-serif;
-background:#080b11;
-color:white;
-min-height:100vh;
 }
 
 .page{
-width:100%;
 min-height:100vh;
-display:flex;
-justify-content:center;
+width:100%;
 background:
 radial-gradient(
-circle at 50% 30%,
-rgba(255,190,20,.09),
-transparent 32%
-),
-#080b11;
+circle at 50% 25%,
+rgba(255,190,20,.12),
+transparent 35%
+);
 }
 
 .container{
 width:100%;
 max-width:700px;
-min-height:100vh;
-padding:45px 22px 35px;
+margin:auto;
+padding:50px 20px;
 text-align:center;
-}.logo{
+}
+
+.logo{
 width:210px;
 height:210px;
-margin:0 auto 25px;
-border-radius:50%;
+margin:0 auto 30px;
 padding:5px;
+border-radius:50%;
 background:#ffbd20;
 box-shadow:
-0 0 20px rgba(255,189,32,0.8),
-0 0 55px rgba(255,189,32,0.2);
+0 0 25px rgba(255,189,32,.8);
 }
 
 .logo img{
 width:100%;
 height:100%;
-object-fit:cover;
 border-radius:50%;
-background:white;
-display:block;
+object-fit:cover;
+background:#fff;
 }
 
 .badge{
 display:inline-block;
-padding:12px 25px;
-margin-bottom:27px;
+padding:12px 28px;
 border:1px solid #ffbd20;
 border-radius:30px;
 color:#ffbd20;
-background:rgba(255,189,32,0.05);
 font-size:17px;
 font-weight:bold;
+margin-bottom:28px;
 }
 
 .title{
-color:#ffbd20;
-font-size:clamp(34px,7vw,48px);
+font-size:46px;
 font-weight:900;
-line-height:1.1;
-margin-bottom:30px;
-text-shadow:0 0 15px rgba(255,189,32,0.15);
+color:#ffbd20;
+margin-bottom:32px;
+text-shadow:0 0 15px rgba(255,189,32,.2);
 }
 
 .features{
@@ -113,19 +115,13 @@ text-align:left;
 }
 
 .feature{
-font-size:clamp(18px,4vw,22px);
-color:#eeeeee;
-margin:17px 0;
+font-size:22px;
+margin:20px 0;
 line-height:1.4;
 }
 
 .icon{
-display:inline-block;
-width:38px;
-text-align:center;
-}
-
-.stats{
+display:inline.stats{
 display:flex;
 justify-content:center;
 gap:18px;
@@ -133,34 +129,108 @@ margin:35px 0;
 }
 
 .stat{
-width:145px;
-padding:19px 10px;
+width:150px;
+padding:20px 10px;
 border-radius:22px;
 background:#11151b;
-border:1px solid #252930;
+border:1px solid #292d34;
 }
 
 .stat strong{
 display:block;
 color:#ffbd20;
-font-size:25px;
-margin-bottom:7px;
+font-size:28px;
+margin-bottom:8px;
 }
 
 .stat span{
-color:#929292;
+color:#999;
 font-size:15px;
-}</style>
+}
+
+.join-button{
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+min-height:95px;
+margin:25px auto;
+padding:20px;
+border-radius:60px;
+background:#ffbd20;
+color:#080b11;
+text-decoration:none;
+font-size:25px;
+font-weight:900;
+box-shadow:
+0 0 25px rgba(255,189,32,.55),
+0 0 60px rgba(255,189,32,.15);
+}
+
+.join-button:active{
+transform:scale(.98);
+}
+
+.subtext{
+color:#999;
+font-size:16px;
+line-height:1.5;
+}
+
+.risk{
+margin-top:30px;
+color:#777;
+font-size:14px;
+}
+
+.managed{
+margin-top:22px;
+color:#ffbd20;
+font-size:15px;
+font-weight:bold;
+}
+
+@media(max-width:600px){
+
+.container{
+padding:35px 18px;
+}
+
+.logo{
+width:180px;
+height:180px;
+}
+
+.title{
+font-size:38px;
+}
+
+.feature{
+font-size:20px;
+margin:17px 0;
+}
+
+.join-button{
+min-height:90px;
+font-size:22px;
+}
+}
+  </style>
+
 </head>
 
 <body>
 
 <div class="page">
 
-<main class="container">
+<div class="container">
 
 <div class="logo">
-<img src="logo.jpg" alt="Trade With Goyal">
+
+<img
+src="logo.jpg"
+alt="Trade With Goyal">
+
 </div>
 
 <div class="badge">
@@ -214,9 +284,10 @@ class="join-button"
 href="https://t.me/+XilBMDMFRYcwNDQ1"
 target="_blank"
 rel="noopener"
-onclick="trackJoin()"
->
+onclick="trackJoin()">
+
 🚀 Join Telegram Community
+
 </a>
 
 <div class="subtext">
@@ -232,7 +303,7 @@ Trading Involves Risk.
 🚀 Ads Managed By Digital Growth Zone
 </div>
 
-</main>
+</div>
 
 </div>
 
@@ -240,7 +311,7 @@ Trading Involves Risk.
 
 function trackJoin(){
 
-if(typeof fbq==="function"){
+if(typeof fbq === "function"){
 
 fbq(
 "track",
@@ -254,4 +325,5 @@ fbq(
 </script>
 
 </body>
+
 </html>
