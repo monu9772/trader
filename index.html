@@ -1,404 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Trade With Goyal | Free Telegram Community</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-<title>Trade With Goyal</title>
+    fbq('init', '1596935485152290');
+    fbq('track', 'PageView');
+  </script>
 
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;
-n.loaded=!0;
-n.version='2.0';
-n.queue=[];
-t=b.createElement(e);
-t.async=!0;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <noscript>
+    <img height="1" width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1596935485152290&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-fbq('init','1596935485152290');
-fbq('track','PageView');
-</script>
-
-<noscript>
-<img height="1" width="1"
-style="display:none"
-src="https://www.facebook.com/tr?id=1596935485152290&ev=PageView&noscript=1">
-</noscript>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-background:#070a0f;
-color:#fff;
-font-family:Arial,sans-serif;
-}
-
-.page{
-min-height:100vh;
-width:100%;
-background:
-radial-gradient(
-circle at 50% 25%,
-rgba(255,190,20,.12),
-transparent 35%
-);
-}
-
-.container{
-width:100%;
-max-width:700px;
-margin:auto;
-padding:50px 20px;
-text-align:center;
-}
-
-.logo{
-width:150px;
-height:150px;
-margin:0 auto 30px;
-padding:5px;
-border-radius:50%;
-background:#ffbd20;
-box-shadow:
-0 0 25px rgba(255,189,32,.8);
-}
-
-.logo img{
-width:100%;
-height:100%;
-border-radius:50%;
-object-fit:cover;
-background:#fff;
-}
-
-.badge{
-display:inline-block;
-padding:12px 28px;
-border:1px solid #ffbd20;
-border-radius:30px;
-color:#ffbd20;
-font-size:17px;
-font-weight:bold;
-margin-bottom:28px;
-}
-
-.title{
-font-size:46px;
-font-weight:900;
-color:#ffbd20;
-margin-bottom:32px;
-text-shadow:0 0 15px rgba(255,189,32,.2);
-}
-
-.features{
-max-width:500px;
-margin:auto;
-text-align:left;
-}
-
-.feature{
-font-size:22px;
-margin:20px 0;
-line-height:1.4;
-}
-
-.icon{
-display:inline.stats{
-display:flex;
-justify-content:center;
-gap:18px;
-margin:35px 0;
-}
-
-.stat{
-width:150px;
-padding:20px 10px;
-border-radius:22px;
-background:#11151b;
-border:1px solid #292d34;
-}
-
-.stat strong{
-display:block;
-color:#ffbd20;
-font-size:28px;
-margin-bottom:8px;
-}
-
-.stat span{
-color:#999;
-font-size:15px;
-}
-
-.join-button{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:100%;
-    max-width:650px;
-    min-height:100px;
-
-    margin:32px auto;
-    padding:20px 25px;
-
-    border-radius:55px;
-
-    background:linear-gradient(
-        135deg,
-        #ffd84a 0%,
-        #ffbd20 45%,
-        #f59e00 100%
-    );
-
-    color:#080b11;
-    text-decoration:none;
-
-    font-size:26px;
-    font-weight:900;
-    letter-spacing:.3px;
-
-    border:2px solid #ffe99a;
-
-    box-shadow:
-        0 8px 0 #b97800,
-        0 12px 30px rgba(255,189,32,.45),
-        0 0 45px rgba(255,189,32,.25);
-
-    overflow:hidden;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-/* Premium shine */
-
-.join-button::before{
-    content:"";
-    position:absolute;
-
-    top:0;
-    left:-120%;
-
-    width:70%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.65),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:shine 3s infinite;
-}
-
-@keyframes shine{
-    0%{
-        left:-120%;
+  <style>* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    45%,100%{
-        left:150%;
+    body {
+      font-family: Arial, sans-serif;
+      background: #050b16;
+      color: #ffffff;
+      min-height: 100vh;
     }
-}
 
-.join-button:hover{
-    transform:translateY(-3px);
+    .page {
+      width: 100%;
+      max-width: 520px;
+      margin: auto;
+      padding: 25px 18px 40px;
+    }
 
-    box-shadow:
-        0 10px 0 #b97800,
-        0 15px 40px rgba(255,189,32,.6),
-        0 0 60px rgba(255,189,32,.35);
-}
+    .logo {
+      width: 82px;
+      height: 82px;
+      margin: 10px auto 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #00d4ff, #0066ff);
+      box-shadow: 0 0 30px rgba(0,180,255,0.45);
+      font-size: 30px;
+      font-weight: 900;
+    }
 
-.join-button:active{
-    transform:translateY(4px);
+    .brand {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
 
-    box-shadow:
-        0 4px 0 #b97800,
-        0 8px 20px rgba(255,189,32,.35);
-}
+    .subtitle {
+      text-align: center;
+      color: #aebbd0;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
 
-.join-button:active{
-transform:scale(.98);
-}
+    .hero-box {
+      background: linear-gradient(
+        145deg,
+        rgba(17,32,58,0.98),
+        rgba(7,15,29,0.98)
+      );
+      border: 1px solid rgba(0,200,255,0.25);
+      border-radius: 22px;
+      padding: 28px 18px;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+    }
 
-.subtext{
-color:#999;
-font-size:16px;
-line-height:1.5;
-}
-
-.risk{
-margin-top:30px;
-color:#777;
-font-size:14px;
-}
-
-.managed{
-margin-top:22px;
-color:#ffbd20;
-font-size:15px;
-font-weight:bold;
-}
-
-@media(max-width:600px){
-
-.container{
-padding:35px 18px;
-}
-
-.logo{
-width:150px;
-height:150px;
-}
-
-.title{
-font-size:38px;
-}
-
-.feature{
-font-size:20px;
-margin:17px 0;
-}
-
-.join-button{
-min-height:90px;
-font-size:22px;
-}
-}
-  </style>
-
+    .hero-title {
+      font-size:</style>
 </head>
 
 <body>
 
-<div class="page">
+  <div class="page">
 
-<div class="container">
+    <div class="logo">TG</div>
 
-<div class="logo">
+    <div class="brand">
+      TRADE WITH GOYAL
+    </div>
 
-<img
-src="logo.jpg"
-alt="Trade With Goyal">
+    <div class="subtitle">
+      Join our free Telegram community
+      and stay connected with the market.
+    </div>
 
-</div>
+    <div class="hero-box">
 
-<div class="badge">
-📈 Stock Market Community
-</div>
+      <div class="hero-title">
+        🚀 JOIN OUR FREE TELEGRAM
+      </div>
 
-<h1 class="title">
-👑 TRADE WITH GOYAL
-</h1>
+      <div class="hero-text">
+        Get market updates, trading insights
+        and useful information directly on Telegram.
+      </div>
 
-<div class="features">
+      <a
+        href="https://t.me/+XilBMDMFRYcwNDQ1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="telegram-btn"
+        onclick="fbq('track', 'Lead');"
+      >
+        🚀 JOIN FREE TELEGRAM
+      </a>
 
-<div class="feature">
-<span class="icon">📊</span>
-NIFTY &amp; BANKNIFTY Analysis
-</div>
+      <div class="features">
 
-<div class="feature">
-<span class="icon">🎯</span>
-Price Action Learning
-</div>
+        <div class="feature">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Market Updates</div>
+          <div class="feature-text">Stay Updated</div>
+        </div>
 
-<div class="feature">
-<span class="icon">📈</span>
-Stock Market Education
-</div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Fast Updates</div>
+          <div class="feature-text">Direct On Telegram</div>
+        </div>
 
-<div class="feature">
-<span class="icon">🛡️</span>
-Risk Management Concepts
-</div>
+        <div class="feature">
+          <div class="feature-icon">👥</div>
+          <div class="feature-title">Free Community</div>
+          <div class="feature-text">Join Today</div>
+        </div>
 
-</div>
+        <div class="feature">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-title">Notifications</div>
+          <div class="feature-text">Never Miss Updates</div>
+        </div>
 
-<div class="stats">
+      </div>
 
-<div class="stat">
-<strong>40K+</strong>
-<span>Members</span>
-</div>
+    </div>
 
-<div class="stat">
-<strong>Daily</strong>
-<span>Updates</span>
-</div>
+    <div class="disclaimer">
+      ⚠️ Disclaimer: Trading and investing in financial
+      markets involves risk. Please do your own research
+      before making any investment decision.
+    </div>
 
-</div>
-
-<a
-class="join-button"
-href="https://t.me/+XilBMDMFRYcwNDQ1"
-target="_blank"
-rel="noopener"
-onclick="trackJoin()">
-
-🚀 Join Telegram Community
-
-</a>
-
-<div class="subtext">
-Free Access • Educational Content • Beginner Friendly
-</div>
-
-<div class="risk">
-For Educational Purposes Only.
-Trading Involves Risk.
-</div>
-
-<div class="managed">
-🚀 Ads Managed By Digital Growth Zone
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-function trackJoin(){
-
-if(typeof fbq === "function"){
-
-fbq(
-"track",
-"Lead"
-);
-
-}
-
-}
-
-</script>
+  </div>
 
 </body>
-
 </html>
