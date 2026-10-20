@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade With Goyal - Learning Community</title>
     
-    <!-- Google Fonts -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Meta Pixel Code -->
@@ -33,14 +31,13 @@
 
     <style>
         :root {
-            --bg-dark: #070b19;
-            --card-dark: rgba(13, 19, 36, 0.85);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-white: #ffffff;
-            --text-blue: #38bdf8;
-            --text-gray: #94a3b8;
-            --btn-blue: #2563eb;
-            --btn-hover: #1d4ed8;
+            --bg-dark: #050811;
+            --card-bg: #0b1120;
+            --border-color: #162032;
+            --blue-accent: #2563eb;
+            --blue-glow: #38bdf8;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
         }
 
         * {
@@ -53,7 +50,7 @@
 
         body {
             background-color: var(--bg-dark);
-            color: var(--text-white);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -61,7 +58,7 @@
             padding-bottom: 40px;
         }
 
-        /* Top Header Navigation Bar */
+        /* Top Bar */
         .header-bar {
             width: 100%;
             max-width: 480px;
@@ -69,15 +66,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: rgba(7, 11, 25, 0.95);
-            border-bottom: 1px solid var(--card-border);
+            background-color: rgba(5, 8, 17, 0.95);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
         }
 
-        .header-profile {
+        .header-left {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -88,39 +85,35 @@
             height: 36px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid var(--text-blue);
+            border: 1px solid var(--blue-glow);
         }
 
-        .header-title-box h3 {
+        .header-info h3 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--text-white);
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            color: var(--text-main);
         }
 
-        .header-title-box h3 span {
-            color: var(--text-blue);
+        .header-info h3 span {
+            color: var(--blue-glow);
         }
 
-        .header-title-box p {
+        .header-info p {
             font-size: 10px;
-            color: var(--text-gray);
+            color: var(--text-sub);
         }
 
         .live-badge {
-            background: rgba(34, 197, 94, 0.12);
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
             color: #4ade80;
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: 20px;
             font-size: 10px;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px;
-            letter-spacing: 0.5px;
+            gap: 5px;
         }
 
         .live-dot {
@@ -129,16 +122,15 @@
             background-color: #4ade80;
             border-radius: 50%;
             box-shadow: 0 0 8px #4ade80;
-            animation: pulse-dot 1.5s infinite;
+            animation: blink 1.5s infinite;
         }
 
-        @keyframes pulse-dot {
-            0% { opacity: 0.3; transform: scale(0.9); }
-            50% { opacity: 1; transform: scale(1.2); }
-            100% { opacity: 0.3; transform: scale(0.9); }
+        @keyframes blink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             width: 100%;
             max-width: 480px;
@@ -149,221 +141,193 @@
             text-align: center;
         }
 
-        /* Glowing Circular Profile Avatar */
-        .profile-container {
+        /* Profile Ring */
+        .profile-wrap {
             position: relative;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             margin-top: 10px;
         }
 
-        .profile-glow-ring {
+        .glow-ring {
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(56,189,248,0.6) 0%, rgba(37,99,235,0.2) 60%, transparent 80%);
-            filter: blur(8px);
+            background: radial-gradient(circle, rgba(56,189,248,0.5) 0%, rgba(37,99,235,0.1) 70%, transparent 100%);
+            filter: blur(6px);
         }
 
-        .profile-img-wrap {
+        .profile-img-box {
             position: relative;
-            width: 130px;
-            height: 130px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             padding: 3px;
-            background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            background: linear-gradient(135deg, #38bdf8, #1d4ed8);
         }
 
-        .profile-img {
+        .profile-img-box img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            background-color: #0d1322;
+            background: #050811;
         }
 
-        /* Indian Flag Divider Bar */
-        .flag-bar {
+        /* Flag Line */
+        .flag-line {
             width: 100%;
             height: 4px;
             background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #128807 66.66%, #128807 100%);
             border-radius: 2px;
-            margin-bottom: 18px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+            margin-bottom: 16px;
         }
 
-        /* Title & Subtitles */
-        .main-name {
-            font-size: 30px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
+        /* Main Details */
+        .title {
+            font-size: 28px;
+            font-weight: 800;
             margin-bottom: 4px;
         }
 
-        .main-name span {
-            color: var(--text-blue);
+        .title span {
+            color: var(--blue-glow);
         }
 
-        .sub-name {
+        .sub-title {
             font-size: 13px;
-            color: var(--text-gray);
-            margin-bottom: 8px;
-            font-weight: 500;
+            color: var(--text-sub);
+            margin-bottom: 6px;
         }
 
-        .tagline {
+        .meta-text {
             font-size: 12px;
-            color: var(--text-gray);
-            margin-bottom: 18px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
         }
 
-        .disclaimer-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--card-border);
-            padding: 7px 16px;
-            border-radius: 30px;
+        .disclaimer-btn {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 11px;
             color: #94a3b8;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
-        /* 3-Column Stats Grid */
+        /* 3 Stat Grid */
         .stats-grid {
             width: 100%;
-            background: var(--card-dark);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 16px 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 22px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
-        .stat-column {
+        .stat-box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        .stat-column:not(:last-child) {
-            border-right: 1px solid var(--card-border);
+        .stat-box:not(:last-child) {
+            border-right: 1px solid var(--border-color);
         }
 
-        .stat-value {
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--text-blue);
+        .stat-val {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--blue-glow);
             margin-bottom: 2px;
         }
 
-        .stat-label {
+        .stat-lbl {
             font-size: 10px;
-            color: var(--text-gray);
-            font-weight: 500;
+            color: var(--text-sub);
         }
 
-        /* Primary Action Button */
-        .telegram-btn {
+        /* Main Telegram Button */
+        .btn-telegram {
             width: 100%;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #ffffff;
             text-decoration: none;
-            padding: 18px 24px;
-            border-radius: 16px;
-            font-size: 18px;
-            font-weight: 800;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-            transition: all 0.2s ease;
-            margin-bottom: 22px;
-            border: none;
-            cursor: pointer;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+            margin-bottom: 20px;
+            transition: transform 0.1s ease;
         }
 
-        .telegram-btn:hover {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            transform: translateY(-1px);
-        }
-
-        .telegram-btn:active {
+        .btn-telegram:active {
             transform: scale(0.98);
         }
 
-        .telegram-btn i {
-            font-size: 22px;
-        }
-
-        /* Features Section */
-        .features-list {
+        /* Features List */
+        .feature-box {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .feature-card {
-            background: var(--card-dark);
-            border: 1px solid var(--card-border);
-            padding: 16px;
-            border-radius: 16px;
+        .feature-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             text-align: left;
         }
 
-        .feature-icon-box {
-            width: 44px;
-            height: 44px;
+        .feature-icon {
+            width: 40px;
+            height: 40px;
             background: rgba(56, 189, 248, 0.1);
             border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            color: var(--text-blue);
+            font-size: 18px;
+            color: var(--blue-glow);
             flex-shrink: 0;
         }
 
-        .feature-content h4 {
-            font-size: 14px;
+        .feature-text h4 {
+            font-size: 13px;
             font-weight: 700;
-            color: var(--text-white);
             margin-bottom: 2px;
         }
 
-        .feature-content h5 {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-blue);
-            margin-bottom: 2px;
-        }
-
-        .feature-content p {
+        .feature-text p {
             font-size: 11px;
-            color: var(--text-gray);
+            color: var(--text-sub);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header -->
     <div class="header-bar">
-        <div class="header-profile">
+        <div class="header-left">
             <img src="https://ui-avatars.com/api/?name=Trade+Goyal&background=1d4ed8&color=fff" class="header-avatar" alt="Trade With Goyal">
-            <div class="header-title-box">
+            <div class="header-info">
                 <h3>Trade With <span>Goyal</span></h3>
                 <p>Learning Community</p>
             </div>
@@ -373,82 +337,78 @@
         </div>
     </div>
 
-    <!-- Main Body Container -->
+    <!-- Main Section -->
     <div class="container">
-
-        <!-- Glowing Profile Avatar -->
-        <div class="profile-container">
-            <div class="profile-glow-ring"></div>
-            <div class="profile-img-wrap">
-                <img src="https://ui-avatars.com/api/?name=Trade+Goyal&background=1d4ed8&color=fff&size=250" class="profile-img" alt="Trade With Goyal">
+        <!-- Glowing Avatar -->
+        <div class="profile-wrap">
+            <div class="glow-ring"></div>
+            <div class="profile-img-box">
+                <img src="https://ui-avatars.com/api/?name=Trade+Goyal&background=1d4ed8&color=fff&size=200" alt="Trade With Goyal">
             </div>
         </div>
 
         <!-- Indian Flag Line -->
-        <div class="flag-bar"></div>
+        <div class="flag-line"></div>
 
-        <!-- Title & Tags -->
-        <h1 class="main-name">Trade With <span>Goyal</span></h1>
-        <p class="sub-name">Stock Market Analysis & Learning Community</p>
-        <p class="tagline">Free Financial Literacy • India 🇮🇳 • Free Access</p>
+        <!-- Name & Details -->
+        <h1 class="title">Trade With <span>Goyal</span></h1>
+        <p class="sub-title">Stock Market Analysis & Learning Community</p>
+        <p class="meta-text">Free Financial Literacy • India 🇮🇳 • Free Access</p>
 
-        <!-- Educational Disclaimer Pill -->
-        <div class="disclaimer-pill">
+        <div class="disclaimer-btn">
             🎓 Educational Awareness Only • Not Advice
         </div>
 
-        <!-- 3-Column Stats Card -->
+        <!-- Stats -->
         <div class="stats-grid">
-            <div class="stat-column">
-                <div class="stat-value">Free</div>
-                <div class="stat-label">Always Free</div>
+            <div class="stat-box">
+                <div class="stat-val">Free</div>
+                <div class="stat-lbl">Always Free</div>
             </div>
-            <div class="stat-column">
-                <div class="stat-value">Daily</div>
-                <div class="stat-label">Education</div>
+            <div class="stat-box">
+                <div class="stat-val">Daily</div>
+                <div class="stat-lbl">Education</div>
             </div>
-            <div class="stat-column">
-                <div class="stat-value">Community</div>
-                <div class="stat-label">Active Traders</div>
+            <div class="stat-box">
+                <div class="stat-val">Community</div>
+                <div class="stat-lbl">Active Traders</div>
             </div>
         </div>
 
-        <!-- CTA Telegram Button -->
-        <a href="https://t.me/+XilBMDMFRYcwNDQ1" class="telegram-btn" onclick="trackTelegramClick()">
+        <!-- Button -->
+        <a href="https://t.me/+XilBMDMFRYcwNDQ1" class="btn-telegram" onclick="sendPixelLead()">
             <i class="fa-brands fa-telegram"></i> Free Join Karo
         </a>
 
-        <!-- Feature List Cards -->
-        <div class="features-list">
-            <div class="feature-card">
-                <div class="feature-icon-box">
+        <!-- Feature List -->
+        <div class="feature-box">
+            <div class="feature-item">
+                <div class="feature-icon">
                     <i class="fa-solid fa-book-open"></i>
                 </div>
-                <div class="feature-content">
+                <div class="feature-text">
                     <h4>Market Awareness Basics</h4>
                     <p>Learn financial market setups for educational purposes</p>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon-box">
+            <div class="feature-item">
+                <div class="feature-icon">
                     <i class="fa-solid fa-newspaper"></i>
                 </div>
-                <div class="feature-content">
+                <div class="feature-text">
                     <h4>Financial News Reading</h4>
                     <p>Daily stock updates & chart level analysis</p>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!-- Meta Lead Tracking Script -->
+    <!-- Meta Event Tracking -->
     <script>
-        function trackTelegramClick() {
+        function sendPixelLead() {
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
-                fbq('trackCustom', 'JoinTelegramClick');
             }
         }
     </script>
