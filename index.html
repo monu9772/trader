@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trade With Goyal - Free Trading Community</title>
+    <title>Trade With Goyal - Learning Community</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,13 +33,14 @@
 
     <style>
         :root {
-            --bg-color: #070a12;
-            --card-bg: rgba(18, 24, 38, 0.7);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --accent-blue: #0088cc;
-            --accent-glow: #00d2ff;
-            --text-main: #ffffff;
-            --text-sub: #94a3b8;
+            --bg-dark: #070b19;
+            --card-dark: rgba(13, 19, 36, 0.85);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-blue: #38bdf8;
+            --text-gray: #94a3b8;
+            --btn-blue: #2563eb;
+            --btn-hover: #1d4ed8;
         }
 
         * {
@@ -50,261 +52,405 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-dark);
+            color: var(--text-white);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px 15px 100px 15px;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 136, 204, 0.25) 0%, transparent 60%),
-                radial-gradient(circle at 50% 100%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
-            background-attachment: fixed;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 40px;
         }
 
+        /* Top Header Navigation Bar */
+        .header-bar {
+            width: 100%;
+            max-width: 480px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(7, 11, 25, 0.95);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--text-blue);
+        }
+
+        .header-title-box h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header-title-box h3 span {
+            color: var(--text-blue);
+        }
+
+        .header-title-box p {
+            font-size: 10px;
+            color: var(--text-gray);
+        }
+
+        .live-badge {
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4ade80;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(0.9); }
+        }
+
+        /* Main Container */
         .container {
             width: 100%;
             max-width: 480px;
-            margin: 0 auto;
+            padding: 24px 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
 
-        /* Top Header Badge */
-        .top-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid rgba(0, 210, 255, 0.3);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--accent-glow);
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
-
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00ff88;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00ff88;
-            animation: pulse-green 1.5s infinite;
-        }
-
-        @keyframes pulse-green {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 136, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
-        }
-
-        /* Profile Avatar */
-        .avatar-wrapper {
+        /* Glowing Circular Profile Avatar */
+        .profile-container {
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            margin-top: 10px;
         }
 
-        .avatar {
-            width: 110px;
-            height: 110px;
+        .profile-glow-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56,189,248,0.6) 0%, rgba(37,99,235,0.2) 60%, transparent 80%);
+            filter: blur(8px);
+        }
+
+        .profile-img-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(0, 210, 255, 0.8);
-            box-shadow: 0 0 25px rgba(0, 136, 204, 0.5);
-            background: #111;
+            background-color: #0d1322;
         }
 
-        .tricolor-bar {
+        /* Indian Flag Divider Bar */
+        .flag-bar {
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #128807 66.66%);
+            background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #128807 66.66%, #128807 100%);
             border-radius: 2px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+            margin-bottom: 18px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
         }
 
-        /* Title & Subtitle */
-        .main-title {
-            font-size: 28px;
-            font-weight: 800;
+        /* Title & Subtitles */
+        .main-name {
+            font-size: 30px;
+            font-weight: 900;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        .main-title span {
-            color: var(--accent-glow);
-            text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        .main-name span {
+            color: var(--text-blue);
         }
 
-        .sub-title {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin-bottom: 12px;
+        .sub-name {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
             font-weight: 500;
         }
 
-        .disclaimer-pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            color: #a0aec0;
-            margin-bottom: 25px;
+        .tagline {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
         }
 
-        /* Stats Grid */
+        .disclaimer-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--card-border);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 22px;
+        }
+
+        /* 3-Column Stats Grid */
         .stats-grid {
+            width: 100%;
+            background: var(--card-dark);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 16px 12px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 12px 8px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+        .stat-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-column:not(:last-child) {
+            border-right: 1px solid var(--card-border);
         }
 
         .stat-value {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-main);
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-blue);
             margin-bottom: 2px;
         }
 
         .stat-label {
             font-size: 10px;
-            color: var(--text-sub);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--text-gray);
+            font-weight: 500;
         }
 
-        /* Primary Button */
+        /* Primary Action Button */
         .telegram-btn {
             width: 100%;
-            background: linear-gradient(135deg, #0088cc 0%, #00b2ff 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #ffffff;
             text-decoration: none;
             padding: 18px 24px;
             border-radius: 16px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4);
-            transition: all 0.3s ease;
-            margin-bottom: 25px;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
+            margin-bottom: 22px;
             border: none;
             cursor: pointer;
         }
 
         .telegram-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 136, 204, 0.6);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transform: translateY(-1px);
         }
 
-        .telegram-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(60deg, transparent, rgba(255,255,255,0.25), transparent);
-            transform: rotate(30deg);
-            animation: shimmer 3s infinite;
+        .telegram-btn:active {
+            transform: scale(0.98);
         }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
+        .telegram-btn i {
+            font-size: 22px;
         }
 
-        /* Features List */
+        /* Features Section */
         .features-list {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 20px;
         }
 
         .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: var(--card-dark);
+            border: 1px solid var(--card-border);
             padding: 16px;
-            border-radius: 14px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
             text-align: left;
-            backdrop-filter: blur(10px);
         }
 
-        .feature-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(0, 210, 255, 0.1);
-            border-radius: 10px;
+        .feature-icon-box {
+            width: 44px;
+            height: 44px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            color: var(--accent-glow);
+            font-size: 20px;
+            color: var(--text-blue);
             flex-shrink: 0;
         }
 
-        .feature-info h4 {
+        .feature-content h4 {
             font-size: 14px;
             font-weight: 700;
+            color: var(--text-white);
             margin-bottom: 2px;
         }
 
-        .feature-info p {
+        .feature-content h5 {
             font-size: 12px;
-            color: var(--text-sub);
+            font-weight: 600;
+            color: var(--text-blue);
+            margin-bottom: 2px;
         }
 
-        /* Sticky Bottom Bar for Mobile */
-        .sticky-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(7, 10, 18, 0.9);
-            border-top: 1px solid var(--border-color);
-            padding: 12px 15px;
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-        }
-
-        .sticky-footer .telegram-btn {
-            margin-bottom: 0;
-            padding: 14px 20px;
-            font-size: 16px;
-            max-width: 480px;
+        .feature-content p {
+            font-size: 11px;
+            color: var(--text-gray);
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
+    <div class="header-bar">
+        <div class="header-profile">
+            <img src="https://ui-avatars.com/api/?name=Trade+Goyal&background=1d4ed8&color=fff" class="header-avatar" alt="Trade With Goyal">
+            <div class="header-title-box">
+                <h3>Trade With <span>Goyal</span></h3>
+                <p>Learning Community</p>
+            </div>
+        </div>
+        <div class="live-badge">
+            <span class="live-dot"></span> LIVE
+        </div>
+    </div>
+
+    <!-- Main Body Container -->
     <div class="container">
-        <!-- Live Badge -->
-        <div class="top-badge">
+
+        <!-- Glowing Profile Avatar -->
+        <div class="profile-container">
+            <div class="profile-glow-ring"></div>
+            <div class="profile-img-wrap">
+                <img src="https://ui-avatars.com/api/?name=Trade+Goyal&background=1d4ed8&color=fff&size=250" class="profile-img" alt="Trade With Goyal">
+            </div>
+        </div>
+
+        <!-- Indian Flag Line -->
+        <div class="flag-bar"></div>
+
+        <!-- Title & Tags -->
+        <h1 class="main-name">Trade With <span>Goyal</span></h1>
+        <p class="sub-name">Stock Market Analysis & Learning Community</p>
+        <p class="tagline">Free Financial Literacy • India 🇮🇳 • Free Access</p>
+
+        <!-- Educational Disclaimer Pill -->
+        <div class="disclaimer-pill">
+            🎓 Educational Awareness Only • Not Advice
+        </div>
+
+        <!-- 3-Column Stats Card -->
+        <div class="stats-grid">
+            <div class="stat-column">
+                <div class="stat-value">Free</div>
+                <div class="stat-label">Always Free</div>
+            </div>
+            <div class="stat-column">
+                <div class="stat-value">Daily</div>
+                <div class="stat-label">Education</div>
+            </div>
+            <div class="stat-column">
+                <div class="stat-value">Community</div>
+                <div class="stat-label">Active Traders</div>
+            </div>
+        </div>
+
+        <!-- CTA Telegram Button -->
+        <a href="https://t.me/+XilBMDMFRYcwNDQ1" class="telegram-btn" onclick="trackTelegramClick()">
+            <i class="fa-brands fa-telegram"></i> Free Join Karo
+        </a>
+
+        <!-- Feature List Cards -->
+        <div class="features-list">
+            <div class="feature-card">
+                <div class="feature-icon-box">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Market Awareness Basics</h4>
+                    <p>Learn financial market setups for educational purposes</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon-box">
+                    <i class="fa-solid fa-newspaper"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Financial News Reading</h4>
+                    <p>Daily stock updates & chart level analysis</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Meta Lead Tracking Script -->
+    <script>
+        function trackTelegramClick() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+                fbq('trackCustom', 'JoinTelegramClick');
+            }
+        }
+    </script>
+</body>
+</html>
