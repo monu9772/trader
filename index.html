@@ -408,9 +408,9 @@
     <script>
         function sendPixelLead() {
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-            }
-        }
+                fbq('track', 'Lead', {
+                currency: 'INR',
+                value: 0.00
     </script>
 </body>
 </html>
